@@ -31,9 +31,9 @@ const PMButton = (props) => {
     }
     return (
         <ButtonContainer>
-            <FaPlus onClick={plusNumber} style={({marginRight: '2rem'})}/>
+            <FaMinus onClick={minusNumber} style={({marginRight: '2rem', cursor: 'pointer'})}/>
             <NumberText>{number}</NumberText>
-            <FaMinus onClick={minusNumber} style={({marginLeft: '2rem'})}/>
+            <FaPlus onClick={plusNumber} style={({marginLeft: '2rem', cursor: 'pointer'})}/>
         </ButtonContainer>
     )
 }
