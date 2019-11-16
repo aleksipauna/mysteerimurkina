@@ -1,5 +1,6 @@
 import React, { useState, createContext } from "react";
-import Header from '../Header'
+import Header from "../Header";
+import ProgressBar from "../ProgressBar";
 
 const NavigatorContext = createContext();
 
@@ -23,7 +24,8 @@ export const Navigator = ({ pages }) => {
     <NavigatorContext.Provider value={nextPage}>
       <Header />
       {activePage.page}
-      { activeIndex > 1 && <button onClick={prevPage}>go back</button> }
+      {activeIndex > 1 && <button onClick={prevPage}>go back</button>}
+      <ProgressBar current={activeIndex} total={pages.length} />
     </NavigatorContext.Provider>
   );
 };
