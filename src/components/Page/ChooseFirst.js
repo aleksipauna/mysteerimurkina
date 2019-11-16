@@ -28,10 +28,10 @@ const ChooseFirst = (props) => {
   console.log('p', props.next)
   return (
     <OptionsSection>
-      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
-      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
-      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
-      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
+      <Option pic='238.jpeg' title="Healthy" content="Delicios and nutrient-rich!" onClick={props.next}/>
+      <Option pic='10255.jpeg' title="Delicious" content="Well-tested all-time mouthwatering favourites!" onClick={props.next}/>
+      <Option pic='4956.jpeg' title="Aware" content="Save the planet with your next meal!" onClick={props.next}/>
+      <Option pic='5796.jpeg' title="Exotic" content="Discover a new favourite." onClick={props.next}/>
     </OptionsSection>
   )
 }

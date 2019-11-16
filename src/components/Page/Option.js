@@ -14,6 +14,10 @@ const OptionHolder = styled.div`
     box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
     0 0 1rem rgba(0,0,0,0.2);
     background-image: url("${(props) => props.src}");
+    transition: transform .2s;
+    :hover {
+        transform: scale(1.06); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
 `;
 
 const OptionHeader = styled.header`
@@ -46,7 +50,7 @@ const OptionContent = styled.div`
 
 const Option = (props) => {
     return (
-        <OptionHolder src={props.pic}>
+        <OptionHolder src={props.pic} onClick={props.onClick}>
             <OptionContent>
                 <ContentBox>
                     <OptionHeader>
