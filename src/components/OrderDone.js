@@ -104,7 +104,7 @@ const OrderDone = ({ servings, recipe }) => {
                   })}
               </div>
             </div>
-            <div style={{ flex: 0.5 }}>
+            <div style={{ flex: 0.5, marginBottom: '20px' }}>
               <h3>Instructions:</h3>
               <div>
                 {recipe.instruction
