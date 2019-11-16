@@ -23,17 +23,24 @@ const OptionsSection = styled.section`
 
 const Option = styled.div`
   border-radius: 5px;
-  padding: 3em;
+  padding: 1em;
   margin: 1em;
   background: rgb(0,0,0);
   background: linear-gradient(124deg, rgba(0,0,0,1) 20%, rgba(248,104,0,1) 100%);
 `;
 
+const OptionHeader = styled.header`
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+`;
 const ChooseFirst = (props) => {
   return (
     <OptionsSection>
       <Option>
-        <OptionContent>Terveellistä</OptionContent>
+        <OptionHeader>Terveellistä</OptionHeader>
+        <Button>-></Button>
       </Option>
       <Option>
         <OptionContent>Herkullista</OptionContent>
