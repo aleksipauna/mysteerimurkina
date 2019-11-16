@@ -9,6 +9,7 @@ const Progress = styled.div`
   margin: 0 10px;
   border-radius: 20px;
   background-color: ${({ active }) => active ? COLOR_ORANGE : COLOR_DISABLED};
+  opacity: ${({ active }) => active ? 1 : 0.5};
 `
 
 const ProgressWrapper = styled.div`
@@ -38,8 +39,8 @@ const ProgressBar = ({ total, current }) => {
   const constructProgress = () => {
     let res = []
     for (let i = 0; i < total; i++) res.push(
-      <ProgressItemWrapper>
-        <Progress key={i} active={i < current} />
+      <ProgressItemWrapper key={i}>
+        <Progress active={i < current} />
         <ProgressTitle>{ pTitles[i] }</ProgressTitle>
       </ProgressItemWrapper>
     )

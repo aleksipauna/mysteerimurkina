@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "../Header";
 import ProgressBar from "../ProgressBar";
 import Button from "../Button";
+import { IoIosCheckmark } from 'react-icons/io'
 
 const NavigatorContext = createContext();
 
@@ -21,7 +22,7 @@ const ActionButtonContainer = styled.div`
 
 const ButtonWrapper = styled.div`
   margin: 0 20px;
-`
+`;
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -29,16 +30,16 @@ const AppWrapper = styled.div`
   padding: 20px 10px;
   @media (max-width: 768px) {
     max-width: 100%;
-  };
-`
+  }
+`;
 
 const PageTitle = styled.h2`
   text-align: center;
-  color: #47525E;
-`
+  color: #47525e;
+`;
 
 export const Navigator = ({ pages }) => {
-  const [activeIndex, setActiveIndex] = useState(4);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   const nextPage = () => {
     if (activeIndex !== pages.length) setActiveIndex(activeIndex + 1);
@@ -55,21 +56,26 @@ export const Navigator = ({ pages }) => {
 
   return (
     <NavigatorContext.Provider value={nextPage}>
-      <Header />      
+      <Header />
       <AppWrapper>
         <ProgressBar current={activeIndex} total={pages.length} />
-        <PageTitle>
-          {activePage.title}
-        </PageTitle>
+        <PageTitle>{activePage.title}</PageTitle>
         {activePage.page}
         <ActionContainer>
           <ActionButtonContainer>
             <ButtonWrapper>
-              <Button onClick={prevPage} content="Back" />
+              <Button disabled={activeIndex === 1} onClick={prevPage} content="Back" />
             </ButtonWrapper>
-            <ButtonWrapper>
-              <Button onClick={nextPage} content="Next" />
-            </ButtonWrapper>
+            {activeIndex !== pages.length && (
+              <ButtonWrapper>
+                <Button onClick={nextPage} content="Next" />
+              </ButtonWrapper>
+            )}
+            {activeIndex === pages.length && (
+              <ButtonWrapper>
+                <Button icon={<IoIosCheckmark style={{ height: '30px', width: '30px' }} />} onClick={nextPage} content="Confirm" />
+              </ButtonWrapper>
+            )}
           </ActionButtonContainer>
         </ActionContainer>
       </AppWrapper>
@@ -86,9 +92,7 @@ export const Pagify = PageContent => props => {
   return (
     <PageContainer>
       <NavigatorContext.Consumer>
-        {next => (
-          <PageContent next={next} {...props} />
-        )}
+        {next => <PageContent next={next} {...props} />}
       </NavigatorContext.Consumer>
     </PageContainer>
   );

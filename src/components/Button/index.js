@@ -6,18 +6,20 @@ const Button = styled.div`
   width: 140px;
   height: 40px;
   border-radius: 80px;
-  background-color: ${({ disabled }) => disabled ? COLOR_DISABLED : COLOR_ORANGE};
+  background-color: ${COLOR_ORANGE};
   color: white;
-  cursor: pointer;
+  cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: ${({ disabled }) => disabled ? 0.5 : 1};
 `
 
 const ButtonWithContent = (props) => {
   return (
     <Button { ...props }>
       { props.content }
+      { props.icon }
     </Button>
   )
 }

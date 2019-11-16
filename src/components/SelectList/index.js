@@ -58,7 +58,7 @@ const SelectList = ({ items = [] }) => {
       { items.map((item) => {
         const active = selected.includes(item.id)
         return (
-          <SelectableItem onClick={() => handleSelect(item.id)}>
+          <SelectableItem key={item.id} onClick={() => handleSelect(item.id)}>
             <div style={{ minWidth: '60px' }}>
               <SelectImage src={item.img} />
             </div>
