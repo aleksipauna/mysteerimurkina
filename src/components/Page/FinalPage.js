@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 import { Pagify } from "../Navigator";
 import Option from "./Option"
+import PMButton from "../Button/PMButton"
 
 
 const OrderColumn = styled.div`
@@ -57,7 +58,13 @@ text-align: center;
 background: #77D353;
 `;
 
+
+
 const FinalPage = (props) => {
+    const [number, setNumber] = useState(4)
+    const numberChanged = (number) => {
+        setNumber(number)
+    }
   return (
     <div>
         <OrderText>Check your order details</OrderText>
@@ -65,17 +72,18 @@ const FinalPage = (props) => {
             <OrderColumn>
                 <OrderTitle>Your order</OrderTitle>
                 <OrderImg src='kyskassi.svg' />
+                <PMButton numberChanged={numberChanged}/>
                 <OrderSection>
-                    <OrderText2 style={({marginRight: '1rem'})}>Mystery recipe (4 pers.)</OrderText2>
-                    <OrderText2 >12,45€</OrderText2>
+                    <OrderText2 style={({marginRight: '1rem'})}>Mystery recipe ({number} pers.)</OrderText2>
+                    <OrderText2 >{number*3.5}€</OrderText2>
                 </OrderSection>
-                <OrderText>Additions items</OrderText>
+                <OrderText>Additional items</OrderText>
                 <OrderSection>
                     <OrderText2 style={({marginRight: '1rem'})}>Cannola oil</OrderText2>
                     <OrderText2 >3,45€</OrderText2>
                 </OrderSection>
                 <BoldTitle>Total</BoldTitle>
-                <BoldTitle>15,90€</BoldTitle>
+                <BoldTitle>{number*3.5+3.45}€</BoldTitle>
             </OrderColumn>
             <OrderColumn>
                 <OrderTitle>Waste reduced</OrderTitle>
