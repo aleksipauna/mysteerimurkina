@@ -16,7 +16,7 @@ const OptionHolder = styled.div`
     background-image: url("${(props) => props.src}");
     transition: transform .2s;
     :hover {
-        transform: scale(1.06); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
 `;
 
