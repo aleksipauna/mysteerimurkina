@@ -74,7 +74,7 @@ const IconWrapper = styled.div`
 
 const Footer = styled.div`
   margin-top: 20px;
-  border-top: 1px solid ${COLOR_DISABLED};
+  border-top: 1px solid ${"#dbdbdb"};
   width: 100%;
   display: flex;
   flex: 1;
@@ -102,6 +102,13 @@ const Icon = ({ src, title, small }) => {
   );
 };
 
+const SplashImage = styled.img`
+  max-width: 70%;
+  @media (max-width: 620px) {
+    max-width: 100%;
+  }
+`;
+
 const LandingPage = ({ onStart }) => {
   return (
     <>
@@ -120,7 +127,7 @@ const LandingPage = ({ onStart }) => {
             marginBottom: "40px"
           }}
         >
-          <img style={{ maxWidth: "70%" }} src="splash.jpg" />
+          <SplashImage src="splash.jpg" />
         </div>
         <MidContainer>
           <div style={{ flex: 0.5 }}>

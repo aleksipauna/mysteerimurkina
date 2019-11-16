@@ -26,6 +26,7 @@ const OptionHeader = styled.span`
   font-family: "Public Sans", sans-serif;
   font-size: 16px;
   padding: 0em 0em 0em 0.5em;
+  margin-bottom: 5px;
 `;
 
 const OptionText = styled.p`
@@ -65,7 +66,7 @@ const Option = props => {
         <ContentBox hover={hover}>
           <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
             <OptionHeader>{props.title}</OptionHeader>
-            <div style={{auto: '0', paddingLeft: '1em'}}>{ props.selected && <FaRegCheckCircle style={{display: 'block', margin: 'auto'}}/> }</div>
+            <div style={{auto: '0', marginLeft: '5px'}}>{ props.selected && <FaRegCheckCircle style={{display: 'block', margin: 'auto', marginBottom: '5px'}}/> }</div>
           </div>
           <OptionText>{props.content}</OptionText>
           

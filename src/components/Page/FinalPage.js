@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Pagify } from "../Navigator";
 import Option from "./Option";
 import PMButton from "../Button/PMButton";
-import { COLOR_DISABLED } from '../constants'
+import { COLOR_DISABLED } from "../constants";
 
 const mockItems = [
   { id: 1, name: "Canola oil (450ml)", img: "oljy.jpeg", price: 2 },
@@ -67,7 +67,11 @@ const FinalPage = props => {
   const [number, setNumber] = useState(4);
   const numberChanged = number => {
     setNumber(number);
+    props.setServings(number);
   };
+  useEffect(() => {
+    props.setServings(4);
+  }, []);
   const additional = props.additional;
 
   const calcSum = () => {
@@ -91,7 +95,17 @@ const FinalPage = props => {
             </OrderText2>
             <OrderText2>{number * 3.5}€</OrderText2>
           </OrderSection>
-          {additional.length !== 0 && <span style={{ alignSelf: 'flex-start', marginBottom: '5px', color: COLOR_DISABLED }}>Additional products:</span>}
+          {additional.length !== 0 && (
+            <span
+              style={{
+                alignSelf: "flex-start",
+                marginBottom: "5px",
+                color: COLOR_DISABLED
+              }}
+            >
+              Additional products:
+            </span>
+          )}
           {additional.map(i => {
             const { name, price } = mockItems.find(item => item.id === i);
 

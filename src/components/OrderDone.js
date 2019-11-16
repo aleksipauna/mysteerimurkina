@@ -24,8 +24,33 @@ const OrderText = styled.p`
   font-size: 16px;
 `;
 
-const OrderDone = ({ recipe }) => {
+const Image = styled.img`
+  min-width: 100vw;
+  @media (max-width: 768px) {
+    min-width: 0;
+    max-width: 100%;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  padding: 20px 100px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+    margin: 0 10px;
+  }
+`;
+
+const OrderDone = ({ servings, recipe }) => {
   const [time, setTime] = useState(15);
+  let finalServing = (recipe && recipe.portions && recipe.portions.Amount)
+    ? servings /
+      (recipe.portions.Amount.includes("/")
+        ? Number(recipe.portions.Amount[0])
+        : Number(recipe.portions.Amount))
+    : 1;
+  if (!finalServing) finalServing = 1;
   const timer = setTimeout(() => {
     if (time - 1 < 0) {
       clearInterval(timer);
@@ -49,10 +74,12 @@ const OrderDone = ({ recipe }) => {
             Order has been delivered!
           </BoldTitle>
           <div style={{ display: "flex", padding: "10px" }}>
-            <img style={{ minWidth: "100vw" }} src={recipe.picture_url} />
+            <Image src={recipe.picture_url} />
           </div>
-          <h2 style={{ margin: "0 0 20px 0" }}>{recipe.name}</h2>
-          <div style={{ display: "flex", padding: "20px 100px" }}>
+          <h2 style={{ margin: "0 0 20px 0", textAlign: "center" }}>
+            {recipe.name}
+          </h2>
+          <Container>
             <div
               style={{
                 display: "flex",
@@ -61,34 +88,38 @@ const OrderDone = ({ recipe }) => {
                 flex: 0.5
               }}
             >
-              <h3>Ingredients for 10 serving(s):</h3>
+              <h3>Ingredients for {servings} serving(s):</h3>
               <div style={{ display: "grid", gridTemplateColumns: "50% 50%" }}>
-                {recipe.ingredients.map(({ name: i }) => {
-                  return (
-                    <>
-                      <p>10 kg</p>
-                      <p key={i}>{i.charAt(0).toUpperCase() + i.slice(1)}</p>
-                    </>
-                  );
-                })}
+                {recipe.ingredients &&
+                  recipe.ingredients.map(({ name: i, amount, unit }) => {
+                    return (
+                      <React.Fragment key={i}>
+                        <p>
+                          <b>{Math.ceil(finalServing)}</b>x {amount}
+                          {unit || "kpl"}
+                        </p>
+                        <p>{i.charAt(0).toUpperCase() + i.slice(1)}</p>
+                      </React.Fragment>
+                    );
+                  })}
               </div>
             </div>
-            <div style={{ flex: 0.5 }}>
+            <div style={{ flex: 0.5, marginBottom: '20px' }}>
               <h3>Instructions:</h3>
-              <p>
+              <div>
                 {recipe.instruction
                   .split("#")
                   .filter(x => x)
                   .map((wtf, i) => {
                     return (
-                      <p>
-                        {i + 1}. {wtf}
+                      <p key={i}>
+                        <b>{i + 1}.</b> {wtf}
                       </p>
                     );
                   })}
-              </p>
+              </div>
             </div>
-          </div>
+          </Container>
         </div>
       ) : (
         <DoneContainer>

@@ -25,6 +25,7 @@ const Main = () => {
   const [landed, setLanded] = useState(false)
   const [orderDone, setOrderDone] = useState(false)
   const [prediction, setPrediction] = useState(null)
+  const [servings, setServings] = useState(-1)
 
   const resetAdditional = () => setAdditional([])
   const resetSelectedCategory = () => setSelectedCategory([])
@@ -44,15 +45,24 @@ const Main = () => {
     { page: <ChooseFirst resetSelectedCategory={resetSelectedCategory} setCategory={(c) => setSelectedCategory(c)} content="Valitse" />, index: 1, title: 'What kind of food do you want?' },
     { page: <Constraints setDiet={setDiet} setAllergines={setAllergines} />, index: 2, title: 'Do you have any allergies or diets?' },
     { page: <AdditionalProducts resetAdditional={resetAdditional} addAdditional={handleSetAdditional} />, index: 3, title: "Additional products" },
-    { page: <FinalPage additional={additional}  />, index: 4, title: "Order details" }
+    { page: <FinalPage setServings={setServings} additional={additional}  />, index: 4, title: "Order details" }
   ];
-
+  const resetPage = () => {
+        setSelectedCategory([])
+        setAllergines([])
+        setDiet([])
+        setAdditional([])
+        setLanded(false)
+        setOrderDone(false)
+        setPrediction(null)
+        setServings(-1)
+  }
   return (
     <>
-      <Header />
+      <Header onClick={resetPage} />
       {
         landed ?
-          orderDone ?  <OrderDone recipe={prediction} />: <Navigator selectedCategory={selectedCategory} pages={pages} onConfirm={() => setOrderDone(true)} /> :
+          orderDone ?  <OrderDone servings={servings} recipe={prediction} />: <Navigator selectedCategory={selectedCategory} pages={pages} onConfirm={() => setOrderDone(true)} /> :
           <LandingPage onStart={() => setLanded(true)} />
       }
     </>
