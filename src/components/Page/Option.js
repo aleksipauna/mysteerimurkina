@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import {FaRegCheckCircle} from "react-icons/fa";
 
 const OptionHolder = styled.div`
     flex: 0.5;
@@ -20,11 +21,11 @@ const OptionHolder = styled.div`
     }
 `;
 
-const OptionHeader = styled.header`
+const OptionHeader = styled.span`
   color: black;
   font-family: "Public Sans", sans-serif;
   font-size: 16px;
-  padding: 0.5em 0.5em 0em 0.5em;
+  padding: 0em 0em 0em 0.5em;
 `;
 
 const OptionText = styled.p`
@@ -38,6 +39,7 @@ const ContentBox = styled.div`
   height: 5em;
   width: 100%;
   transition: filter 0.4s;
+  padding: 0.5em 0.5em 0em 0em;
   filter: ${({ hover }) => (hover ? "brightness(90%);" : "none")};
 `;
 
@@ -60,9 +62,13 @@ const Option = props => {
       style={props.selected || hover ? {backgroundSize: 'auto 105%'} : {backgroundSize: 'auto 100%'}}
     >
       <OptionContent>
-        <ContentBox hover={hover} style={props.selected ? {backgroundColor: '#90EE90'} : {backgroundColor: "#fafafa"}}>
-          <OptionHeader>{props.title}</OptionHeader>
+        <ContentBox hover={hover}>
+          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+            <OptionHeader>{props.title}</OptionHeader>
+            <div style={{auto: '0', paddingLeft: '1em'}}>{ props.selected && <FaRegCheckCircle style={{display: 'block', margin: 'auto'}}/> }</div>
+          </div>
           <OptionText>{props.content}</OptionText>
+          
         </ContentBox>
       </OptionContent>
     </OptionHolder>
