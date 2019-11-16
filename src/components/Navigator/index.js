@@ -25,7 +25,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const AppWrapper = styled.div`
-  height: 100%;
+  flex: 1;
   max-width: 60%;
   padding: 20px 10px;
   @media (max-width: 768px) {
