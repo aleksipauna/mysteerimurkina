@@ -24,6 +24,7 @@ const Main = () => {
   const [additional, setAdditional] = useState([])
   const [landed, setLanded] = useState(false)
   const [orderDone, setOrderDone] = useState(false)
+  const [prediction, setPrediction] = useState(null)
 
   const resetAdditional = () => setAdditional([])
   const resetSelectedCategory = () => setSelectedCategory([])
@@ -35,7 +36,7 @@ const Main = () => {
 
   useEffect(() => {
     if (orderDone) {
-      console.log('DONE!', getPrediction(selectedCategory, allergines, diet))
+      setPrediction(getPrediction(selectedCategory, allergines, diet))
     }
   }, [orderDone])
 
@@ -51,7 +52,7 @@ const Main = () => {
       <Header />
       {
         landed ?
-          orderDone ?  <OrderDone/>: <Navigator selectedCategory={selectedCategory} pages={pages} onConfirm={() => setOrderDone(true)} /> :
+          orderDone ?  <OrderDone recipe={prediction} />: <Navigator selectedCategory={selectedCategory} pages={pages} onConfirm={() => setOrderDone(true)} /> :
           <LandingPage onStart={() => setLanded(true)} />
       }
     </>
