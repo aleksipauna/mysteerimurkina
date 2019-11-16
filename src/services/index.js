@@ -3,7 +3,7 @@ const healthy = ['Kasvisruoat','Kasvislisäkkeet','Kasvis']
 const convenient = ['Mukavuudenhaluiset','Helppo','Puolivalmisteita sisältävä','Lyhyt aktiivinen valmistusaika',]
 const aware = ['Kasvisruoat','Kasvislisäkkeet','Kasvis']
 const exotic = ['Makuja maailmalta']
-var seed = 1;
+var seed = 2;
 
 function my_random() {
     var x = Math.sin(seed++) * 10000;
@@ -39,6 +39,6 @@ export const getPrediction = function(foodTypes, allergens, diets) {
       })
       return flag
     })
-    let res = typeFiltered[Math.floor(my_random() * Math.floor(typeFiltered.length))]
+    let res = typeFiltered[Math.floor(Math.random() * Math.floor(typeFiltered.length))]
     return res
 }
