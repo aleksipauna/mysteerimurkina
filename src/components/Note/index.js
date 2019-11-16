@@ -8,7 +8,7 @@ const Note = styled.span`
 const NoteWithContent = ({ note }) => {
   return (
     <Note>
-      Note: { note }
+      { note }
     </Note>
   )
 }

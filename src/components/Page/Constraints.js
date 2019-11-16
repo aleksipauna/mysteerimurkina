@@ -53,7 +53,7 @@ const ConstraintsPage = props => {
             <Multiselect options={dietOptions} placeholder="Diet" />
           </MultiselectContainer>
         </InputContainer>
-        <Note note="you can preselect your allergies and diets in your profile settings" />
+        <Note note="Note: you can preselect your allergies and diets in your profile settings" />
       </ConstraintsContainer>
     </>
   );

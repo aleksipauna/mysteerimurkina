@@ -25,6 +25,7 @@ const OptionsSection = styled.section`
 `;
 
 const ChooseFirst = (props) => {
+  console.log('p', props.next)
   return (
     <OptionsSection>
       <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>

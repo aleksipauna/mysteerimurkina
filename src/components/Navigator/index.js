@@ -26,7 +26,7 @@ const ButtonWrapper = styled.div`
 const AppWrapper = styled.div`
   height: 100%;
   max-width: 60%;
-  padding: 10px;
+  padding: 20px 10px;
   @media (max-width: 768px) {
     max-width: 100%;
   };
