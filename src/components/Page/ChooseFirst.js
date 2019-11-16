@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Pagify } from "../Navigator";
-import Button from '../Button'
+import { FaArrowRight } from 'react-icons/fa';
 
 const OptionContent = styled.button`
   cursor: pointer;
@@ -40,7 +40,7 @@ const ChooseFirst = (props) => {
     <OptionsSection>
       <Option>
         <OptionHeader>Terveellistä</OptionHeader>
-        <Button>-></Button>
+        <FaArrowRight />
       </Option>
       <Option>
         <OptionContent>Herkullista</OptionContent>
