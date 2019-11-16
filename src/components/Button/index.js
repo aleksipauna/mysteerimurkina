@@ -17,6 +17,8 @@ const Button = styled.div`
   ${ ({ inverted }) => inverted ? 'font-weight: bold;' : '' }
   ${ ({ inverted }) => inverted ? 'font-size: 16px;' : '' }
   ${ ({ inverted }) => inverted ? 'border-width: 3px;' : '' }
+  ${ ({ inverted }) => inverted ? `&:hover { background-color: ${COLOR_ORANGE}; color: white; };` : '' }
+  ${ ({ inverted }) => inverted ? 'transition: all .2s;' : '' }
 `
 
 const ButtonWithContent = (props) => {
