@@ -91,7 +91,7 @@ const FinalPage = props => {
             </OrderText2>
             <OrderText2>{number * 3.5}€</OrderText2>
           </OrderSection>
-          {additional.length && <span style={{ alignSelf: 'flex-start', marginBottom: '5px', color: COLOR_DISABLED }}>Additional products:</span>}
+          {additional.length !== 0 && <span style={{ alignSelf: 'flex-start', marginBottom: '5px', color: COLOR_DISABLED }}>Additional products:</span>}
           {additional.map(i => {
             const { name, price } = mockItems.find(item => item.id === i);
 

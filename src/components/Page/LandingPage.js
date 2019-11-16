@@ -147,7 +147,7 @@ const LandingPage = ({ onStart }) => {
               height="60px"
               inverted
               onClick={onStart}
-              content="Order your recipe"
+              content="Get your recipe"
             />
           </div>
         </MidContainer>
