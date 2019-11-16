@@ -38,7 +38,7 @@ const PageTitle = styled.h2`
 `
 
 export const Navigator = ({ pages }) => {
-  const [activeIndex, setActiveIndex] = useState(3);
+  const [activeIndex, setActiveIndex] = useState(4);
 
   const nextPage = () => {
     if (activeIndex !== pages.length) setActiveIndex(activeIndex + 1);
