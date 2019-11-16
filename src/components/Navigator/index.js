@@ -1,4 +1,5 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext } from "react";
+import Header from '../Header'
 
 const NavigatorContext = createContext();
 
@@ -20,6 +21,7 @@ export const Navigator = ({ pages }) => {
 
   return (
     <NavigatorContext.Provider value={nextPage}>
+      <Header />
       {activePage.page}
       { activeIndex > 1 && <button onClick={prevPage}>go back</button> }
     </NavigatorContext.Provider>
