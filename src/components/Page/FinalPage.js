@@ -69,7 +69,6 @@ const FinalPage = props => {
     setNumber(number);
   };
   const additional = props.additional;
-  console.log("additional", additional);
 
   const calcSum = () => {
     const sum = additional.reduce(

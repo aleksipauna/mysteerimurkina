@@ -51,7 +51,6 @@ const OptionContent = styled.div`
 
 const Option = props => {
   const [hover, setHover] = useState(false);
-  console.log(props.selected)
   return (
     <OptionHolder
       onMouseEnter={() => setHover(true)}
