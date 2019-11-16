@@ -39,7 +39,7 @@ const filter_recipes = function(recipes, words) {
 
 export const getPrediction = function(foodTypes, allergens, diets) {
   let recipes = remove(json, ignore);
-  console.log(recipes)
+  //console.log(recipes)
   diets.forEach(el => {
     switch(el) {
       case 'vegan':
