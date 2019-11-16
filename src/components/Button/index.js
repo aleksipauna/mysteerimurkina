@@ -23,7 +23,7 @@ const Button = styled.div`
 
 const ButtonWithContent = (props) => {
   return (
-    <Button { ...props }>
+    <Button { ...props } onClick={() => props.disabled ? null : props.onClick()}>
       { props.content }
       { props.icon }
     </Button>
