@@ -10,35 +10,37 @@ function my_random() {
     return x - Math.floor(x);
 }
 
-export const getPrediction = function(foodTypes, allergens, diets) {
-  let foodFilter = [];
-  foodTypes.forEach(el => {
-    switch(el) {
-        case 'healthy':
-        foodFilter = foodFilter.concat(healthy)
-        break;
-        case 'convenient':
-        foodFilter = foodFilter.concat(convenient)
-        break;
-        case 'aware':
-        foodFilter = foodFilter.concat(aware)
-        break;
-        case 'exotic':
-        foodFilter = foodFilter.concat(exotic)
-        break;
-        default:
-        foodFilter = foodFilter.concat(convenient)
-        } 
-  })
-  let typeFiltered = json.filter(el => {
+const filter_recipes = function(recipes, words) {
+  let res = recipes.filter(el => {
       let flag = false
-      foodFilter.forEach(f => {
+      words.forEach(f => {
         if (el.categories.indexOf(f) >= 0) {
-	  flag = true
+        flag = true
         }
       })
       return flag
     })
-    let res = typeFiltered[Math.floor(Math.random() * Math.floor(typeFiltered.length))]
+  return res
+} 
+
+export const getPrediction = function(foodTypes, allergens, diets) {
+  let recipes = json;
+  foodTypes.forEach(el => {
+    switch(el) {
+        case 'healthy':
+          recipes = filter_recipes(recipes, healthy)
+        break;
+        case 'convenient':
+          recipes = filter_recipes(recipes, convenient)
+        break;
+        case 'aware':
+          recipes = filter_recipes(recipes, aware)
+        break;
+        case 'exotic':
+          recipes = filter_recipes(recipes, exotic)
+        break;
+        } 
+  })
+    let res = recipes[Math.floor(Math.random() * Math.floor(recipes.length))]
     return res
 }
