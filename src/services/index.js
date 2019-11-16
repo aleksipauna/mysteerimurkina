@@ -10,30 +10,32 @@ function my_random() {
     return x - Math.floor(x);
 }
 
-export const getPrediction = function(foodType, allergens, diets) {
-  let foodFilter;
-  switch(foodType) {
-    case 'healthy':
-      foodFilter = healthy
-      break;
-    case 'convenient':
-      foodFilter = convenient
-      break;
-    case 'aware':
-      foodFilter = aware
-      break;
-    case 'exotic':
-      foodFilter = exotic
-      break;
-  } 
-    let typeFiltered = json.filter(el => {
-        let flag = false
-        foodFilter.forEach(f => {
-          if (el.categories.indexOf(f) >= 0) {
-            flag = true
-          }
-        })
-        return flag
+export const getPrediction = function(foodTypes, allergens, diets) {
+  let foodFilter = [];
+  foodTypes.forEach(el => {
+    switch(el) {
+        case 'healthy':
+        foodFilter = foodFilter.concat(healthy)
+        break;
+        case 'convenient':
+        foodFilter = foodFilter.concat(convenient)
+        break;
+        case 'aware':
+        foodFilter = foodFilter.concat(aware)
+        break;
+        case 'exotic':
+        foodFilter = foodFilter.concat(exotic)
+        break;
+        } 
+  })
+  let typeFiltered = json.filter(el => {
+      let flag = false
+      foodFilter.forEach(f => {
+        if (el.categories.indexOf(f) >= 0) {
+	  flag = true
+        }
+      })
+      return flag
     })
     let res = typeFiltered[Math.floor(my_random() * Math.floor(typeFiltered.length))]
     return res

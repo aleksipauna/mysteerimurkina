@@ -34,7 +34,7 @@ const Main = () => {
 
   useEffect(() => {
     if (orderDone) {
-      console.log('DONE!', getPrediction(selectedCategory, allergines, diet))
+      console.log('DONE!', getPrediction([selectedCategory], allergines, diet))
     }
   }, [orderDone])
 
