@@ -22,7 +22,7 @@ const Main = () => {
   const [allergines, setAllergines] = useState([])
   const [diet, setDiet] = useState([])
   const [additional, setAdditional] = useState([])
-  const [landed, setLanded] = useState(true)
+  const [landed, setLanded] = useState(false)
   const [orderDone, setOrderDone] = useState(false)
 
   const resetAdditional = () => setAdditional([])
