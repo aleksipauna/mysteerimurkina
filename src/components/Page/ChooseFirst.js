@@ -31,9 +31,9 @@ const ChooseFirst = (props) => {
   }
   return (
     <OptionsSection>
-      <Option pic='238.jpeg' title="Healthy" content="Delicios and nutrient-rich!" onClick={() => handleClick('healthy')}/>
-      <Option pic='10255.jpeg' title="Convenient" content="Guaranteed to be fast to cook and exceptionally tasty!" onClick={() => handleClick('delicious')}/>
-      <Option pic='4956.jpeg' title="Aware" content="Save the planet with your next meal!" onClick={() => handleClick('aware')}/>
+      <Option pic='238.jpeg' title="Healthy" content="Nutrient-rich but still as delicious!" onClick={() => handleClick('healthy')}/>
+      <Option pic='10255.jpeg' title="Convenient" content="Don't want to waste time in the kitchen? Choose this to get an easy and fast recipe." onClick={() => handleClick('delicious')}/>
+      <Option pic='4956.jpeg' title="Low carbon footprint" content="Reducing food waste while still eating low emission food? Gotcha!" onClick={() => handleClick('aware')}/>
       <Option pic='5796.jpeg' title="Exotic" content="Discover a new favourite." onClick={() => handleClick('exotic')}/>
     </OptionsSection>
   )
