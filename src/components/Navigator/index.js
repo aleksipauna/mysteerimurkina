@@ -38,7 +38,7 @@ const PageTitle = styled.h2`
 `
 
 export const Navigator = ({ pages }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(3);
 
   const nextPage = () => {
     if (activeIndex !== pages.length) setActiveIndex(activeIndex + 1);
@@ -84,12 +84,12 @@ const PageContainer = styled.div`
 
 export const Pagify = PageContent => props => {
   return (
-    <NavigatorContext.Consumer>
-      {next => (
-        <PageContainer>
+    <PageContainer>
+      <NavigatorContext.Consumer>
+        {next => (
           <PageContent next={next} {...props} />
-        </PageContainer>
-      )}
-    </NavigatorContext.Consumer>
+        )}
+      </NavigatorContext.Consumer>
+    </PageContainer>
   );
 };
