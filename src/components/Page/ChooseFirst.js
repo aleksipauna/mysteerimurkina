@@ -38,7 +38,6 @@ const ChooseFirst = (props) => {
       <Option>
         <OptionContent>Herkullista</OptionContent>
       </Option>
-      <Button onClick={props.next} content='Next' />
     </OptionsSection>
   )
 }

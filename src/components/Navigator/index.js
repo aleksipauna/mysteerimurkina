@@ -1,8 +1,36 @@
 import React, { useState, createContext } from "react";
+import styled from "styled-components";
 import Header from "../Header";
 import ProgressBar from "../ProgressBar";
+import Button from "../Button";
 
 const NavigatorContext = createContext();
+
+const ActionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ActionButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+`;
+
+const ButtonWrapper = styled.div`
+  margin: 0 20px;
+`
+
+const AppWrapper = styled.div`
+  height: 100%;
+`
+
+const PageTitle = styled.h2`
+  text-align: center;
+  color: #47525E;
+`
 
 export const Navigator = ({ pages }) => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -22,21 +50,40 @@ export const Navigator = ({ pages }) => {
 
   return (
     <NavigatorContext.Provider value={nextPage}>
-      <Header />
-      {activePage.page}
-      {activeIndex > 1 && <button onClick={prevPage}>go back</button>}
-      <ProgressBar current={activeIndex} total={pages.length} />
+      <AppWrapper>
+        <Header />
+        <PageTitle>
+          {activePage.title}
+        </PageTitle>
+        {activePage.page}
+        <ActionContainer>
+          <ProgressBar current={activeIndex} total={pages.length} />
+          <ActionButtonContainer>
+            <ButtonWrapper>
+              <Button onClick={prevPage} content="Back" />
+            </ButtonWrapper>
+            <ButtonWrapper>
+              <Button onClick={nextPage} content="Next" />
+            </ButtonWrapper>
+          </ActionButtonContainer>
+        </ActionContainer>
+      </AppWrapper>
     </NavigatorContext.Provider>
   );
 };
+
+const PageContainer = styled.div`
+  padding: 20px;
+  min-height: 40%;
+`;
 
 export const Pagify = PageContent => props => {
   return (
     <NavigatorContext.Consumer>
       {next => (
-        <div>
+        <PageContainer>
           <PageContent next={next} {...props} />
-        </div>
+        </PageContainer>
       )}
     </NavigatorContext.Consumer>
   );

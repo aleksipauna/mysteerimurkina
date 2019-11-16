@@ -6,11 +6,11 @@ const mockOptions = [
   { key: "css", text: "CSS", value: "css" }
 ];
 
-const Multiselect = ({ options }) => {
+const Multiselect = ({ placeholder, options }) => {
   return (
     <Dropdown
       search
-      placeholder="Skills"
+      placeholder={placeholder || "Placeholder"}
       fluid
       multiple
       selection

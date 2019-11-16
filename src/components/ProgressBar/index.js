@@ -4,7 +4,8 @@ import { COLOR_ORANGE, COLOR_DISABLED } from '../constants'
 
 const Progress = styled.div`
   height: 10px;
-  width: 100px;
+  max-width: 120px;
+  width: 20vw;
   margin: 0 10px;
   border-radius: 20px;
   background-color: ${({ active }) => active ? COLOR_ORANGE : COLOR_DISABLED};
