@@ -141,7 +141,7 @@ const LandingPage = ({ onStart }) => {
               style={{ width: "140px", height: "80px", marginLeft: "20px" }}
               src="kyslogo_no_margin.svg"
             />
-            <EatsTitle>Mystery eats</EatsTitle>
+            <EatsTitle>K-Surprise</EatsTitle>
             <Button
               width="200px"
               height="60px"
