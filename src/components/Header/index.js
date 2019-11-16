@@ -5,7 +5,7 @@ import { IoIosMenu } from 'react-icons/io'
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  height: 56px;
+  min-height: 56px;
   padding: 0 15px 0 15px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
   width: 100%;
