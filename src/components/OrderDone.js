@@ -63,7 +63,7 @@ const OrderDone = ({ recipe }) => {
             >
               <h3>Ingredients for 10 serving(s):</h3>
               <div style={{ display: "grid", gridTemplateColumns: "50% 50%" }}>
-                {recipe.ingredients.map(i => {
+                {recipe.ingredients.map(({ name: i }) => {
                   return (
                     <>
                       <p>10 kg</p>
