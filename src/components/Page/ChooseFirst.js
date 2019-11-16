@@ -14,18 +14,23 @@ const OptionContent = styled.button`
     background-color: palevioletred;
     color: white;
   }
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Public Sans', sans-serif;
 `;
 
 const OptionsSection = styled.section`
   display: -webkit-flex;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const ChooseFirst = (props) => {
   return (
     <OptionsSection>
-      <Option pic='10255.jpeg' title="Healty" content="Lorem ipsum" onClick={props.next}/>
+      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
+      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
+      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
+      <Option pic='10255.jpeg' title="Healthy" content="Lorem ipsum" onClick={props.next}/>
     </OptionsSection>
   )
 }

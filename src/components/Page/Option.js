@@ -18,16 +18,17 @@ const OptionHolder = styled.div`
 
 const OptionHeader = styled.header`
   color: black;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Public Sans', sans-serif;
   font-size: 16px;
   font-weight: bold;
-  padding: 0.5em;
+  padding: 0.5em 0.5em 0em 0.5em;
 `;
 
 const OptionText = styled.p`
   color: black;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Public Sans', sans-serif;
   font-size: 13px;
+  padding: 0.5em;
 `;
 const ContentBox = styled.div`
     background-color: white ;
