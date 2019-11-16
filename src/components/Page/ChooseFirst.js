@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 import { Pagify } from "../Navigator";
 import Option from "./Option"
@@ -25,16 +25,22 @@ const OptionsSection = styled.div`
 `;
 
 const ChooseFirst = (props) => {
+  const [categories, setCategories] = useState([])
   const handleClick = (c) => {
+    if (categories.includes(c)) {
+      setCategories(categories.filter((item) => item !== c))
+    } else {
+      setCategories(categories.concat(c))
+    }
     props.setCategory(c)
-    props.next()
   }
+
   return (
     <OptionsSection>
-      <Option pic='238.jpeg' title="Healthy" content="Nutrient-rich but still as delicious!" onClick={() => handleClick('healthy')}/>
-      <Option pic='10255.jpeg' title="Convenient" content="Don't want to waste time in the kitchen? Choose this to get an easy and fast recipe." onClick={() => handleClick('delicious')}/>
-      <Option pic='4956.jpeg' title="Low carbon footprint" content="Reducing food waste while still eating low emission food? Gotcha!" onClick={() => handleClick('aware')}/>
-      <Option pic='5796.jpeg' title="Exotic" content="Discover a new favourite." onClick={() => handleClick('exotic')}/>
+      <Option pic='238.jpeg' title="Healthy" content="Nutrient-rich but still as delicious!" selected={categories.includes('healthy')} onClick={() => handleClick('healthy')}/>
+      <Option pic='10255.jpeg' title="Convenient" content="Don't want to waste time in the kitchen? Choose this to get an easy and fast recipe." selected={categories.includes('delicious')} onClick={() => handleClick('delicious')}/>
+      <Option pic='4956.jpeg' title="Aware" content="Reducing food waste while still eating low emission food? Gotcha!" selected={categories.includes('aware')}  onClick={() => handleClick('aware')}/>
+      <Option pic='5796.jpeg' title="Exotic" content="Discover a new favourite." selected={categories.includes('exotic')} onClick={() => handleClick('exotic')}/>
     </OptionsSection>
   )
 }
