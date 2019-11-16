@@ -77,13 +77,8 @@ const FinalPage = (props) => {
                     <OrderText2 style={({marginRight: '1rem'})}>Mystery recipe ({number} pers.)</OrderText2>
                     <OrderText2 >{number*3.5}€</OrderText2>
                 </OrderSection>
-                <OrderText>Additional items</OrderText>
-                <OrderSection>
-                    <OrderText2 style={({marginRight: '1rem'})}>Cannola oil</OrderText2>
-                    <OrderText2 >3,45€</OrderText2>
-                </OrderSection>
                 <BoldTitle>Total</BoldTitle>
-                <BoldTitle>{number*3.5+3.45}€</BoldTitle>
+                <BoldTitle>{number*3.5}€</BoldTitle>
             </OrderColumn>
             <OrderColumn>
                 <OrderTitle>Waste reduced</OrderTitle>
