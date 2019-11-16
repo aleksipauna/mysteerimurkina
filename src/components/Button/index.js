@@ -3,11 +3,12 @@ import styled from 'styled-components'
 import { COLOR_ORANGE, COLOR_DISABLED } from '../constants'
 
 const Button = styled.div`
-  width: 140px;
-  height: 40px;
+  width: ${({ width }) => width ? width : '140px'};
+  height: ${({ height }) => height ? height : '40px'};
   border-radius: 80px;
-  background-color: ${COLOR_ORANGE};
-  color: white;
+  background-color: ${({ inverted }) => inverted ? 'white' : COLOR_ORANGE};
+  color: ${({ inverted }) => inverted ? COLOR_ORANGE : 'white'};
+  border: ${({ inverted }) => inverted ? `1px solid ${COLOR_ORANGE}` : 'none'};
   cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
   display: flex;
   justify-content: center;
