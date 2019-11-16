@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Pagify } from "../Navigator";
 import Option from "./Option"
 
+
 const OptionContent = styled.button`
   cursor: pointer;
   background: transparent;
@@ -22,13 +23,10 @@ const OptionsSection = styled.section`
 `;
 
 
-
-
-
 const ChooseFirst = (props) => {
   return (
     <OptionsSection>
-      <Option pic='10255.jpeg' onClick={props.next}/>
+      <Option pic='10255.jpeg' title="Healty" content="Lorem ipsum" onClick={props.next}/>
     </OptionsSection>
   )
 }
