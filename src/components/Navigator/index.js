@@ -25,6 +25,11 @@ const ButtonWrapper = styled.div`
 
 const AppWrapper = styled.div`
   height: 100%;
+  max-width: 60%;
+  padding: 10px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  };
 `
 
 const PageTitle = styled.h2`
@@ -33,7 +38,7 @@ const PageTitle = styled.h2`
 `
 
 export const Navigator = ({ pages }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(2);
 
   const nextPage = () => {
     if (activeIndex !== pages.length) setActiveIndex(activeIndex + 1);
@@ -50,8 +55,8 @@ export const Navigator = ({ pages }) => {
 
   return (
     <NavigatorContext.Provider value={nextPage}>
+      <Header />      
       <AppWrapper>
-        <Header />
         <PageTitle>
           {activePage.title}
         </PageTitle>

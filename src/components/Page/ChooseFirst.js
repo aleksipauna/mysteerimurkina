@@ -21,10 +21,6 @@ const OptionsSection = styled.section`
   display: flex;
 `;
 
-
-
-
-
 const ChooseFirst = (props) => {
   return (
     <OptionsSection>
