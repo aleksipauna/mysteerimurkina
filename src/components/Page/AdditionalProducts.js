@@ -4,7 +4,10 @@ import { Pagify } from "../Navigator";
 import Note from "../Note";
 import SelectList from "../SelectList";
 
-const mockItems = [{ id: 1, name: "testi", img: "" }];
+const mockItems = [
+  { id: 1, name: "Canola oil (450ml)", img: "oljy.jpeg" },
+  { id: 2, name: "Tomato mash (500g)", img: "tomaatti.jpeg" },
+];
 
 const SelectListWrapper = styled.div`
   margin-top: 20px;
