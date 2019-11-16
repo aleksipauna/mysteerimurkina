@@ -7,6 +7,8 @@ const DoneContainer = styled.div`
     justify-content: center;
     align-items:center;
     font-family: 'Public Sans', sans-serif;
+    width: 100%;
+    height: 100%;
 `;
 
 const BoldTitle = styled.h4`

@@ -30,7 +30,7 @@ const EatsTitle = styled.p`
   color: ${COLOR_ORANGE};
   font-size: 55px;
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 20px 0;
   text-align: center;
   @media (max-width: 768px) {
     font-size: 40px;
@@ -54,6 +54,8 @@ const IconTitle = styled.p`
   color: ${COLOR_ORANGE}
   text-align: center;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
   @media (max-width: 620px) {
     flex-direction: column;
     margin: 10px 0 10px 0;
@@ -78,8 +80,10 @@ const Footer = styled.div`
   flex: 1;
   align-items: center;
   background-color: white;
+  max-height: 95px;
   @media (max-width: 620px) {
     flex-direction: column;
+    max-height: none;
   }
 `;
 
