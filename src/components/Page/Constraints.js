@@ -42,15 +42,16 @@ const dietOptions = [
 ];
 
 const ConstraintsPage = props => {
+  
   return (
     <>
       <ConstraintsContainer>
         <InputContainer>
           <MultiselectContainer>
-            <Multiselect options={allergenOptions} placeholder="Allergens" />
+            <Multiselect onChange={(_, { value }) => props.setAllergines(value)} options={allergenOptions} placeholder="Allergens" />
           </MultiselectContainer>
           <MultiselectContainer>
-            <Multiselect options={dietOptions} placeholder="Diet" />
+            <Multiselect onChange={(_, { value }) => props.setDiet(value)} options={dietOptions} placeholder="Diet" />
           </MultiselectContainer>
         </InputContainer>
         <Note note="Note: you can preselect your allergies and diets in your profile settings" />

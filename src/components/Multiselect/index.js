@@ -6,7 +6,7 @@ const mockOptions = [
   { key: "css", text: "CSS", value: "css" }
 ];
 
-const Multiselect = ({ placeholder, options }) => {
+const Multiselect = ({ placeholder, options, onChange }) => {
   return (
     <Dropdown
       search
@@ -15,6 +15,7 @@ const Multiselect = ({ placeholder, options }) => {
       multiple
       selection
       options={options || mockOptions}
+      onChange={onChange}
     />
   );
 };
