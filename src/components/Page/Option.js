@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const OptionHolder = styled.div`
+    flex: 0.5;
     margin: 1em;
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
-    width: 22em;
+    min-width: 22em;
+    max-width: 22em;
     height:16em;
     cursor: pointer;
     box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),

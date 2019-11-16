@@ -17,7 +17,7 @@ const OptionContent = styled.button`
   font-family: 'Public Sans', sans-serif;
 `;
 
-const OptionsSection = styled.section`
+const OptionsSection = styled.div`
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
