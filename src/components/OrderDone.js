@@ -24,8 +24,10 @@ const OrderText = styled.p`
   font-size: 16px;
 `;
 
-const OrderDone = ({ recipe }) => {
+const OrderDone = ({ servings, recipe }) => {
   const [time, setTime] = useState(15);
+  const finalServing =
+    (recipe ? servings / (recipe.portions.Amount.includes('/') ?  Number(recipe.portions.Amount[0]) : Number(recipe.portions.Amount)) : -1);
   const timer = setTimeout(() => {
     if (time - 1 < 0) {
       clearInterval(timer);
@@ -61,32 +63,35 @@ const OrderDone = ({ recipe }) => {
                 flex: 0.5
               }}
             >
-              <h3>Ingredients for 10 serving(s):</h3>
+              <h3>Ingredients for {servings} serving(s):</h3>
               <div style={{ display: "grid", gridTemplateColumns: "50% 50%" }}>
-                {recipe.ingredients.map(({ name: i }) => {
+                {recipe.ingredients.map(({ name: i, amount, unit }) => {
                   return (
-                    <>
-                      <p>10 kg</p>
-                      <p key={i}>{i.charAt(0).toUpperCase() + i.slice(1)}</p>
-                    </>
+                    <React.Fragment key={i}>
+                      <p>
+                        <b>{Math.ceil(finalServing)}</b>x {amount}
+                        {unit || "kpl"}
+                      </p>
+                      <p>{i.charAt(0).toUpperCase() + i.slice(1)}</p>
+                    </React.Fragment>
                   );
                 })}
               </div>
             </div>
             <div style={{ flex: 0.5 }}>
               <h3>Instructions:</h3>
-              <p>
+              <div>
                 {recipe.instruction
                   .split("#")
                   .filter(x => x)
                   .map((wtf, i) => {
                     return (
-                      <p>
+                      <p key={i}>
                         {i + 1}. {wtf}
                       </p>
                     );
                   })}
-              </p>
+              </div>
             </div>
           </div>
         </div>
