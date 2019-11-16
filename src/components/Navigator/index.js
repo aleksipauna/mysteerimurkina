@@ -39,7 +39,7 @@ const PageTitle = styled.h2`
 `;
 
 export const Navigator = ({ pages, onConfirm }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(3);
 
   const nextPage = () => {
     if (activeIndex === pages.length) onConfirm()

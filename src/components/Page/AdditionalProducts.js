@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Pagify } from "../Navigator";
 import Note from "../Note";
@@ -14,13 +14,16 @@ const SelectListWrapper = styled.div`
 `;
 
 const AdditionalProductsPage = props => {
+  useEffect(() => {
+    props.resetAdditional()
+  }, [])
   return (
     <div>
       <Note
         note={`Your mystery recipe may include these products that you've bought recently. If you still need them you can choose them below.`}
       />
       <SelectListWrapper>
-        <SelectList items={mockItems} />
+        <SelectList onClick={(i) => props.addAdditional(i)} items={mockItems} />
       </SelectListWrapper>
     </div>
   );

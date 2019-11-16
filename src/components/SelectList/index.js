@@ -45,12 +45,13 @@ const SelectName = styled.span`
   margin-left: 0px;
 `
 
-const SelectList = ({ items = [] }) => {
+const SelectList = ({ items = [], onClick }) => {
   const [selected, setSelected] = useState([])
 
   const handleSelect = (id) => {
     if (selected.includes(id)) setSelected(selected.filter(s => s !== id))
     else setSelected(selected.concat(id))
+    onClick(id)
   }
 
   return (
