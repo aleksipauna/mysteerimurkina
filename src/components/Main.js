@@ -6,6 +6,7 @@ import ChooseFirst from "./Page/ChooseFirst";
 import Constraints from './Page/Constraints'
 import AdditionalProducts from './Page/AdditionalProducts'
 import FinalPage from './Page/FinalPage'
+import OrderDone from './OrderDone'
 
 const TestPage = Pagify(props => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
   const [allergines, setAllergines] = useState([])
   const [diet, setDiet] = useState([])
   const [landed, setLanded] = useState(false)
+  const [orderDone, setOrderDone] = useState(false)
 
   const pages = [
     { page: <ChooseFirst setCategory={(c) => setSelectedCategory(c)} content="Valitse" />, index: 1, title: 'What kind of food do you want?' },
@@ -33,7 +35,7 @@ const Main = () => {
       <Header />
       {
         landed ?
-          <Navigator pages={pages} /> :
+          orderDone ?  <OrderDone/>: <Navigator pages={pages} onConfirm={() => setOrderDone(true)} /> :
           <LandingPage onStart={() => setLanded(true)} />
       }
     </>
