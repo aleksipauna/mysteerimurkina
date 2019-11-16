@@ -82,9 +82,9 @@ const FinalPage = (props) => {
             </OrderColumn>
             <OrderColumn>
                 <OrderTitle>Waste reduced</OrderTitle>
-                <Circle>0.5kg</Circle>
+                <Circle>{Math.round(0.1*number*100)/100}kg</Circle>
                 <OrderTitle>Savings</OrderTitle>
-                <Circle>4,30€</Circle>
+                <Circle>{Math.round(1.2*number*100)/100}€</Circle>
             </OrderColumn>
         </OrderSection>
     </div>
