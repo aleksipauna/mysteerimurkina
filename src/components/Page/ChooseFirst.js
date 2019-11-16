@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-
+import { Pagify } from "../Navigator";
 
 const Button = styled.button`
   cursor: pointer;
@@ -28,7 +28,7 @@ const Option = styled.div`
   background: linear-gradient(124deg, rgba(0,0,0,1) 20%, rgba(248,104,0,1) 100%);
 `;
 
-const ChooseFirst = () => {
+const ChooseFirst = (props) => {
   return (
     <OptionsSection>
       <Option>
@@ -37,8 +37,9 @@ const ChooseFirst = () => {
       <Option>
         <Button>Herkullista</Button>
       </Option>
+      <button onClick={props.next}>NEXT</button>
     </OptionsSection>
   )
 }
 
-export default ChooseFirst
+export default Pagify(ChooseFirst)

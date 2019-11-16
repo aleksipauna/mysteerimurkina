@@ -1,5 +1,6 @@
 import React from "react";
 import { Pagify, Navigator } from "./Navigator";
+import ChooseFirst from "./Page/ChooseFirst"
 
 const TestPage = Pagify(props => {
   return (
@@ -13,7 +14,7 @@ const TestPage = Pagify(props => {
 
 const Main = () => {
   const pages = [
-    { page: <TestPage content="page 1" />, index: 1 },
+    { page: <ChooseFirst content="Valitse" />, index: 1 },
     { page: <TestPage content="page 2" />, index: 2 },
     { page: <TestPage content="page 3" />, index: 3 },
     { page: <TestPage content="page 4" />, index: 4 },
