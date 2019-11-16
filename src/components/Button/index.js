@@ -14,6 +14,9 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   opacity: ${({ disabled }) => disabled ? 0.5 : 1};
+  ${ ({ inverted }) => inverted ? 'font-weight: bold;' : '' }
+  ${ ({ inverted }) => inverted ? 'font-size: 16px;' : '' }
+  ${ ({ inverted }) => inverted ? 'border-width: 3px;' : '' }
 `
 
 const ButtonWithContent = (props) => {

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Public+Sans&display=swap");
 
+html {
+  background-color: #fafafa;
+}
+
 #root {
   height: 100%;
   width: 100%;
@@ -9,5 +13,6 @@
 }
 
 body {
+  background-color: #fafafa;
   margin: 0;
 }
