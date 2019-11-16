@@ -51,15 +51,17 @@ const OptionContent = styled.div`
 
 const Option = props => {
   const [hover, setHover] = useState(false);
+  console.log(props.selected)
   return (
     <OptionHolder
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       src={props.pic}
       onClick={props.onClick}
+      style={props.selected || hover ? {backgroundSize: 'auto 105%'} : {backgroundSize: 'auto 100%'}}
     >
       <OptionContent>
-        <ContentBox hover={hover}>
+        <ContentBox hover={hover} style={props.selected ? {backgroundColor: '#90EE90'} : {backgroundColor: "#fafafa"}}>
           <OptionHeader>{props.title}</OptionHeader>
           <OptionText>{props.content}</OptionText>
         </ContentBox>
