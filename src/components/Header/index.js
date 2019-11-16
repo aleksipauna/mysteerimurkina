@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
 
 const HeaderLogo = () => {
   return (
-    <div style={{ margin: '0 20px 0 20px' }}>
+    <div style={{ margin: '0 20px 0 0' }}>
       <img src='kyslogo_no_margin.svg' />
     </div>
   )
@@ -36,7 +36,7 @@ const RightIcons = () => {
 const Header = () => {
   return (
     <StyledHeader>
-      <IoIosMenu style={{ width: '40px', height: '40px' }} />
+      {/* <IoIosMenu style={{ width: '40px', height: '40px' }} /> */}
       <HeaderLogo />
       <RightIcons />
     </StyledHeader>
