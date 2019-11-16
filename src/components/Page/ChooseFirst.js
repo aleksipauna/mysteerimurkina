@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Pagify } from "../Navigator";
+import Button from '../Button'
 
-const Button = styled.button`
+const OptionContent = styled.button`
   cursor: pointer;
   background: transparent;
   font-size: 16px;
@@ -32,12 +33,12 @@ const ChooseFirst = (props) => {
   return (
     <OptionsSection>
       <Option>
-        <Button>Terveellistä</Button>
+        <OptionContent>Terveellistä</OptionContent>
       </Option>
       <Option>
-        <Button>Herkullista</Button>
+        <OptionContent>Herkullista</OptionContent>
       </Option>
-      <button onClick={props.next}>NEXT</button>
+      <Button onClick={props.next} content='Next' />
     </OptionsSection>
   )
 }
