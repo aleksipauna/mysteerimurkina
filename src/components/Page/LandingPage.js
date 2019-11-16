@@ -74,7 +74,7 @@ const IconWrapper = styled.div`
 
 const Footer = styled.div`
   margin-top: 20px;
-  border-top: 1px solid ${COLOR_DISABLED};
+  border-top: 1px solid ${'#dbdbdb'};
   width: 100%;
   display: flex;
   flex: 1;
