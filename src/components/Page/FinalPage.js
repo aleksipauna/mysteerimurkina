@@ -71,7 +71,7 @@ const FinalPage = (props) => {
                 </OrderSection>
                 <OrderText>Additions items</OrderText>
                 <OrderSection>
-                    <OrderText2 style={({marginRight: '1rem'})}>Mystery recipe (4 pers.)</OrderText2>
+                    <OrderText2 style={({marginRight: '1rem'})}>Cannola oil</OrderText2>
                     <OrderText2 >3,45€</OrderText2>
                 </OrderSection>
                 <BoldTitle>Total</BoldTitle>
