@@ -2,6 +2,7 @@ import React from "react";
 import { Pagify, Navigator } from "./Navigator";
 import ChooseFirst from "./Page/ChooseFirst";
 import Button from './Button'
+import Multiselect from './Multiselect'
 
 const TestPage = Pagify(props => {
   return (
@@ -9,6 +10,7 @@ const TestPage = Pagify(props => {
       <p>{props.content}</p>
       {/* WHEN WRAPPED WITH Pagify, PROPS WILL ALWAYS CONTAIN FUNC NEXT! */}
       <Button onClick={props.next} content='Next' />
+      <Multiselect />
     </>
   );
 });
