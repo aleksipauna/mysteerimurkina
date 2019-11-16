@@ -32,7 +32,7 @@ const ChooseFirst = (props) => {
   return (
     <OptionsSection>
       <Option pic='238.jpeg' title="Healthy" content="Delicios and nutrient-rich!" onClick={() => handleClick('healthy')}/>
-      <Option pic='10255.jpeg' title="Delicious" content="Well-tested all-time mouthwatering favourites!" onClick={() => handleClick('delicious')}/>
+      <Option pic='10255.jpeg' title="Convenient" content="Guaranteed to be fast to cook and exceptionally tasty!" onClick={() => handleClick('delicious')}/>
       <Option pic='4956.jpeg' title="Aware" content="Save the planet with your next meal!" onClick={() => handleClick('aware')}/>
       <Option pic='5796.jpeg' title="Exotic" content="Discover a new favourite." onClick={() => handleClick('exotic')}/>
     </OptionsSection>
