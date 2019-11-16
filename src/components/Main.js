@@ -47,10 +47,19 @@ const Main = () => {
     { page: <AdditionalProducts resetAdditional={resetAdditional} addAdditional={handleSetAdditional} />, index: 3, title: "Additional products" },
     { page: <FinalPage setServings={setServings} additional={additional}  />, index: 4, title: "Order details" }
   ];
-
+  const resetPage = () => {
+        setSelectedCategory([])
+        setAllergines([])
+        setDiet([])
+        setAdditional([])
+        setLanded(false)
+        setOrderDone(false)
+        setPrediction(null)
+        setServings(-1)
+  }
   return (
     <>
-      <Header />
+      <Header onClick={resetPage} />
       {
         landed ?
           orderDone ?  <OrderDone servings={servings} recipe={prediction} />: <Navigator selectedCategory={selectedCategory} pages={pages} onConfirm={() => setOrderDone(true)} /> :

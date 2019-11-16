@@ -12,9 +12,9 @@ const StyledHeader = styled.header`
   background-color: white;
 `;
 
-const HeaderLogo = () => {
+const HeaderLogo = (props) => {
   return (
-    <div style={{ margin: '0 20px 0 0' }}>
+    <div onClick={props.onClick} style={{ margin: '0 20px 0 0', cursor: 'pointer' }}>
       <img src='kyslogo_no_margin.svg' />
     </div>
   )
@@ -35,11 +35,11 @@ const RightIcons = () => {
   )
 }
 
-const Header = () => {
+const Header = (props) => {
   return (
     <StyledHeader>
       {/* <IoIosMenu style={{ width: '40px', height: '40px' }} /> */}
-      <HeaderLogo />
+      <HeaderLogo onClick={props.onClick} />
       <RightIcons />
     </StyledHeader>
   )
