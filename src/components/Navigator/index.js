@@ -84,7 +84,7 @@ export const Navigator = ({ pages, onConfirm }) => {
 };
 
 const PageContainer = styled.div`
-  padding: 20px;
+  padding: 0px;
   min-height: 40%;
 `;
 
