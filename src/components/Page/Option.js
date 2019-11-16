@@ -31,7 +31,7 @@ const OptionText = styled.p`
   color: black;
   font-family: "Public Sans", sans-serif;
   font-size: 13px;
-  padding: 0.5em;
+  padding-left: 0.5em;
 `;
 const ContentBox = styled.div`
   background-color: #fafafa;
