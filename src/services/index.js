@@ -26,6 +26,8 @@ export const getPrediction = function(foodTypes, allergens, diets) {
         case 'exotic':
         foodFilter = foodFilter.concat(exotic)
         break;
+        default:
+        foodFilter = foodFilter.concat(convenient)
         } 
   })
   let typeFiltered = json.filter(el => {
