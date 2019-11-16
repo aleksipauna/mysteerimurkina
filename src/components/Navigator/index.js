@@ -38,7 +38,7 @@ const PageTitle = styled.h2`
   color: #47525e;
 `;
 
-export const Navigator = ({ pages, onConfirm }) => {
+export const Navigator = ({ pages, onConfirm, selectedCategory }) => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   const nextPage = () => {
@@ -68,7 +68,7 @@ export const Navigator = ({ pages, onConfirm }) => {
             </ButtonWrapper>
             {activeIndex !== pages.length && (
               <ButtonWrapper>
-                <Button onClick={nextPage} content="Next" />
+                <Button disabled={activeIndex === 1 && selectedCategory.length === 0} onClick={nextPage} content="Next" />
               </ButtonWrapper>
             )}
             {activeIndex === pages.length && (

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import { Pagify } from "../Navigator";
 import Option from "./Option"
@@ -26,13 +26,18 @@ const OptionsSection = styled.div`
 
 const ChooseFirst = (props) => {
   const [categories, setCategories] = useState([])
+  useEffect(() => {
+    props.resetSelectedCategory()
+  }, [])
   const handleClick = (c) => {
+    let newCat
     if (categories.includes(c)) {
-      setCategories(categories.filter((item) => item !== c))
+      newCat = categories.filter((item) => item !== c)
     } else {
-      setCategories(categories.concat(c))
+      newCat = categories.concat(c)
     }
-    props.setCategory(c)
+    setCategories(newCat)
+    props.setCategory(newCat)
   }
 
   return (
