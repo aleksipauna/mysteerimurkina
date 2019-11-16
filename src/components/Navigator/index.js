@@ -56,7 +56,6 @@ export const Navigator = ({ pages }) => {
 
   return (
     <NavigatorContext.Provider value={nextPage}>
-      <Header />
       <AppWrapper>
         <ProgressBar current={activeIndex} total={pages.length} />
         <PageTitle>{activePage.title}</PageTitle>
