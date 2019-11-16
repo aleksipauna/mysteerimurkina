@@ -38,11 +38,12 @@ const PageTitle = styled.h2`
   color: #47525e;
 `;
 
-export const Navigator = ({ pages }) => {
+export const Navigator = ({ pages, onConfirm }) => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   const nextPage = () => {
-    if (activeIndex !== pages.length) setActiveIndex(activeIndex + 1);
+    if (activeIndex === pages.length) onConfirm()
+    else if (activeIndex !== pages.length) setActiveIndex(activeIndex + 1);
   };
 
   const prevPage = () => {
