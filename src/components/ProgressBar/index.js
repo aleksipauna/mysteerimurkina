@@ -13,12 +13,36 @@ const Progress = styled.div`
 
 const ProgressWrapper = styled.div`
   display: flex;
+  justify-content: center;
 `
+
+const ProgressTitle = styled.span`
+  color: ${COLOR_DISABLED};
+  text-align: center;
+`
+
+const ProgressItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const pTitles = [
+  "Food style",
+  "Allergies and diets",
+  "Additional details",
+  "Order details"
+]
 
 const ProgressBar = ({ total, current }) => {
   const constructProgress = () => {
     let res = []
-    for (let i = 0; i < total; i++) res.push(<Progress key={i} active={i < current} />)
+    for (let i = 0; i < total; i++) res.push(
+      <ProgressItemWrapper>
+        <Progress key={i} active={i < current} />
+        <ProgressTitle>{ pTitles[i] }</ProgressTitle>
+      </ProgressItemWrapper>
+    )
     return res
   }
   return (

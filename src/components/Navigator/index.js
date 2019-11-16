@@ -16,7 +16,7 @@ const ActionContainer = styled.div`
 const ActionButtonContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 60px;
+  margin-top: 40px;
 `;
 
 const ButtonWrapper = styled.div`
@@ -57,12 +57,12 @@ export const Navigator = ({ pages }) => {
     <NavigatorContext.Provider value={nextPage}>
       <Header />      
       <AppWrapper>
+        <ProgressBar current={activeIndex} total={pages.length} />
         <PageTitle>
           {activePage.title}
         </PageTitle>
         {activePage.page}
         <ActionContainer>
-          <ProgressBar current={activeIndex} total={pages.length} />
           <ActionButtonContainer>
             <ButtonWrapper>
               <Button onClick={prevPage} content="Back" />
