@@ -3,7 +3,7 @@ const healthy = ['Kasvisruoat','Kasvislisäkkeet','Kasvis']
 const convenient = ['Mukavuudenhaluiset','Helppo','Puolivalmisteita sisältävä','Lyhyt aktiivinen valmistusaika',]
 const aware = ['Kasvisruoat','Kasvislisäkkeet','Kasvis']
 const exotic = ['Makuja maailmalta']
-const ignore = ['Makeat leivonnaiset','Juomat','Kuumat juomat ','Pikkujoulut']
+const ignore = ['Makeat leivonnaiset','Juomat','Kuumat juomat ','Pikkujoulut', 'Lisäkkeet']
 var seed = 2;
 
 function my_random() {
