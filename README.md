@@ -1,6 +1,6 @@
 # Think about this
 
-In 2018, Kesko had **18 931** tones of food waste. This correlates to **1.65%** of their annual sales figure. Based on financial data, grocery sales were **5.386 billion euros**, of which we can derive that the value of food going to waste is approximately **90 million euros** annually.  That is a lot of money, almost **1 billion euros** in **10 years** timeframe. We believe we can do better than that!
+In 2018, Kesko had **18 931** tonnes of food waste. This correlates to **1.65%** of their annual sales figure. Based on financial data, grocery sales were **5.386 billion euros**, of which we can derive that the value of food going to waste is approximately **90 million euros** annually.  That is a lot of money, almost **1 billion euros** in **10 years** timeframe. We believe we can do better than that!
 
 # K-Surprise
 
