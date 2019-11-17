@@ -6,6 +6,7 @@
     "detect-browser": "^4.8.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-ga": "^2.7.0",
     "react-icons": "^3.8.0",
     "react-scripts": "3.2.0",
     "semantic-ui-css": "^2.4.1",
