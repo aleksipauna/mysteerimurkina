@@ -88,11 +88,11 @@ const Main = () => {
     setServings(-1);
   };
 
-  if (!browser || browser.name !== 'chrome') {
+  console.log('b', browser.name)
+
+  if (!browser || !['chrome', 'firefox'].includes(browser.name)) {
     return <p>This app is currently usable with only Google Chrome.</p>
   }
-
-  console.log('b', browser.name)
 
   return (
     <>
